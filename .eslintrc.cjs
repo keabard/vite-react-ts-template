@@ -2,6 +2,8 @@ module.exports = {
   root: true,
   env: { browser: true, es2020: true },
   extends: [
+    'eslint-config-airbnb',
+    'eslint-config-airbnb-typescript',
     'eslint:recommended',
     'plugin:@typescript-eslint/strict-type-checked',
     'plugin:@typescript-eslint/stylistic-type-checked',
@@ -33,15 +35,20 @@ module.exports = {
     project: ['./tsconfig.json', './tsconfig.node.json'],
     tsconfigRootDir: __dirname,
   },
-  plugins: ['react-refresh', 'simple-import-sort', 'unused-imports', '@stylexjs', 'testing-library'],
+  plugins: ['react-refresh', 'simple-import-sort', 'unused-imports', '@stylexjs', 'testing-library',  '@stylistic/ts'],
   rules: {
-    'semi': ['error', 'never'],
+    'import/prefer-default-export': 'off',
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
+    'unused-imports/no-unused-imports': 'error',
     'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
     'react/jsx-key': 'error',
-    'unused-imports/no-unused-imports': 'error',
+    'react/function-component-definition': 'off',
     '@stylexjs/valid-styles': ['error'],
+    'object-curly-spacing': ['error', 'always', {
+      'arraysInObjects': false,
+      'objectsInObjects': false,
+    }],
     'padding-line-between-statements': [
       'error',
       {
