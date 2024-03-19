@@ -35,6 +35,7 @@ module.exports = {
   },
   plugins: ['react-refresh', 'simple-import-sort', 'unused-imports', '@stylexjs', 'testing-library'],
   rules: {
+    'semi': ['error', 'never'],
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
     'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
