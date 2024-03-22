@@ -36,7 +36,7 @@ module.exports = {
     project: ['./tsconfig.json', './tsconfig.node.json'],
     tsconfigRootDir: __dirname,
   },
-  plugins: ['react-refresh', 'simple-import-sort', 'unused-imports', '@stylexjs', 'testing-library',  '@stylistic/ts'],
+  plugins: ['react-refresh', 'simple-import-sort', 'unused-imports', '@stylexjs', 'testing-library', '@stylistic/ts'],
   rules: {
     semi: ['error', 'never'],
     'import/prefer-default-export': 'off',
@@ -50,10 +50,14 @@ module.exports = {
     'react/jsx-props-no-spreading': ['off'],
     'react/jsx-no-useless-fragment': ['error', { allowExpressions: true }],
     '@stylexjs/valid-styles': ['error'],
-    'object-curly-spacing': ['error', 'always', {
-      'arraysInObjects': false,
-      'objectsInObjects': false,
-    }],
+    'object-curly-spacing': [
+      'error',
+      'always',
+      {
+        arraysInObjects: false,
+        objectsInObjects: false,
+      },
+    ],
     'padding-line-between-statements': [
       'error',
       {
@@ -98,12 +102,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: [
-        'src/**/?(*.)+(spec|test).ts?(x)',
-        'src/tests/**',
-        '**/vite.config.ts',
-        'setupTests.ts',
-      ],
+      files: ['src/**/?(*.)+(spec|test).ts?(x)', 'src/tests/**', '**/vite.config.ts', 'setupTests.ts'],
       extends: ['plugin:testing-library/react'],
       rules: {
         'import/no-extraneous-dependencies': 'off',
@@ -114,4 +113,4 @@ module.exports = {
       },
     },
   ],
-}
+};
