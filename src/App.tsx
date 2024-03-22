@@ -1,4 +1,4 @@
-import * as stylex from '@stylexjs/stylex'
+import stylex from '@stylexjs/stylex'
 
 const styles = stylex.create({
   main: {
@@ -7,9 +7,4 @@ const styles = stylex.create({
   },
 })
 
-export const App = () => (
-  <main {...stylex.props(styles.main)}>
-    Welcome to my awesome App!
-    <RejectIcon />
-  </main>
-)
+export const App = () => <main {...stylex.props(styles.main)}>Welcome to my awesome App!</main>
